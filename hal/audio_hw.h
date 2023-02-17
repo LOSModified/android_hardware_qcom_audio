@@ -46,6 +46,7 @@
 #include <hardware/audio.h>
 #include <tinyalsa/asoundlib.h>
 #include <tinycompress/tinycompress.h>
+#include <errno.h>
 
 #include <audio_route/audio_route.h>
 #include <audio_utils/ErrorLog.h>
@@ -334,6 +335,9 @@ enum {
     CAR_AUDIO_STREAM_FRONT_PASSENGER  = 0x100,
     CAR_AUDIO_STREAM_REAR_SEAT        = 0x10000,
 };
+
+/* this Macro will be used when  */
+#define AUDIO_HW_A2DP_OFFLOAD_IS_NOT_SUPPORTED -EINVAL
 
 struct stream_app_type_cfg {
     int sample_rate;
